@@ -10,6 +10,10 @@ app.use(express.json());
 // Routes
 app.use("/", home);
 app.use("/", notfound);
+// 404 handler
+app.use((req, res, next) => {
+  res.redirect("/404");
+});
 
 // connection
 const port = process.env.PORT || 9001;
