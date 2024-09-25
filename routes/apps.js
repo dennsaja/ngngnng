@@ -10,7 +10,7 @@ router.get("/apps/swift-app", async (req, res, next) => {
   res.sendFile(path.join(__dirname, 'apk', 'swift-app.apk'));
 });
 
-router.get("/leviosa-app", async (req, res, next) => {
+router.get("/apps/leviosa-app", async (req, res, next) => {
   res.sendFile(path.join(__dirname, 'apk', 'leviosa-app.apk'));
 });
 module.exports = router;
