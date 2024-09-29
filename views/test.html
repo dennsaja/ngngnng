@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifikasi Saat Tombol Ditekan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .notification {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #000;
+            color: #fff;
+            padding: 15px;
+            border-radius: 4px;
+            z-index: 1000;
+            transition: top 0.5s, opacity 0.5s;
+        }
+        .notification.show {
+            display: block;
+            top: 20px;
+            opacity: 1;
+        }
+        .notification.hide {
+            top: -50px;
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Contoh Notifikasi</h1>
+    <button id="showNotificationBtn">Tampilkan Notifikasi</button>
+
+    <div id="notification" class="notification">
+        Ini adalah notifikasi.
+    </div>
+
+    <script>
+        const button = document.getElementById('showNotificationBtn');
+        const notification = document.getElementById('notification');
+
+        button.addEventListener('click', () => {
+            // Tampilkan notifikasi
+            notification.classList.add('show');
+            
+            // Sembunyikan notifikasi setelah 3 detik
+            setTimeout(() => {
+                notification.classList.add('hide');
+                setTimeout(() => {
+                    notification.classList.remove('show', 'hide');
+                }, 300); // Sesuaikan dengan durasi transition
+            }, 3000); // Notifikasi tampil selama 3 detik
+        });
+    </script>
+</body>
+</html>
