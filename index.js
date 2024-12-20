@@ -5,6 +5,8 @@ const index = require("./routes/index");
 const notfound = require("./routes/404");
 const contact = require("./routes/contact");
 const about = require("./routes/about");
+const blog = require("./routes/blog");
+const grid = require("./routes/grid");
 
 // Middlewares
 const app = express();
@@ -15,6 +17,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use("/", index);
 app.use("/contact", contact);
 app.use("/about", about);
+app.use("/blog", blog);
+app.use("/grid", grid);
 app.use("/kesalahansistem", notfound);
 // 404 handler
 app.use((req, res, next) => {
