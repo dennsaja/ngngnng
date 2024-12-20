@@ -3,7 +3,8 @@ const express = require("express");
 const path = require('path');
 const index = require("./routes/index");
 const notfound = require("./routes/404");
-const apps = require("./routes/apps");
+const contact = require("./routes/contact");
+const about = require("./routes/about");
 
 // Middlewares
 const app = express();
@@ -12,11 +13,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Routes
 app.use("/", index);
-app.use("/apps", apps);
-app.use("/error/dennsaja/function/", notfound);
+app.use("/contact", contact);
+app.use("/about", about);
+app.use("/kesalahansistem", notfound);
 // 404 handler
 app.use((req, res, next) => {
-    res.redirect("/error/dennsaja/function/");
+    res.redirect("/kesalahansistem");
   });
 
 // connection
