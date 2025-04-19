@@ -7,6 +7,7 @@ const contact = require("./routes/contact");
 const about = require("./routes/about");
 const blog = require("./routes/blog");
 const grid = require("./routes/grid");
+const kisah-kartini-main = require("./routes/kisah-kartini-main");
 
 // Middlewares
 const app = express();
@@ -19,6 +20,7 @@ app.use("/contact", contact);
 app.use("/about", about);
 app.use("/blog", blog);
 app.use("/grid", grid);
+app.use("/film-kisah-kartini", kisah-kartini-main);
 app.use("/kesalahansistem", notfound);
 // 404 handler
 app.use((req, res, next) => {
