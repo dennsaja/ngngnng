@@ -8,6 +8,7 @@ const about = require("./routes/about");
 const blog = require("./routes/blog");
 const grid = require("./routes/grid");
 const kisahkartini = require("./routes/kisah-kartini-main");
+const hari-ayah = require("./routes/hari-ayah-25");
 
 // Middlewares
 const app = express();
@@ -21,10 +22,11 @@ app.use("/about", about);
 app.use("/blog", blog);
 app.use("/grid", grid);
 app.use("/film-kisah-kartini", kisahkartini);
-app.use("/kesalahansistem", notfound);
+app.use("/selamat-hari-ayah", hari-ayah);
+app.use("/waduh-erorr-banh", notfound);
 // 404 handler
 app.use((req, res, next) => {
-    res.redirect("/kesalahansistem");
+    res.redirect("/waduh-erorr-banh");
   });
 
 // connection
