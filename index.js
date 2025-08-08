@@ -16,14 +16,13 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Routes
-// app.use("/", index);
+app.use("/", index);
 app.use("/contact", contact);
 app.use("/about", about);
 app.use("/blog", blog);
 app.use("/grid", grid);
 app.use("/film-kisah-kartini", kisahkartini);
 app.use("/selamat-hari-ayah", hariayah);
-app.use("/", hariayah);
 app.use("/waduh-erorr-banh", notfound);
 // 404 handler
 app.use((req, res, next) => {
